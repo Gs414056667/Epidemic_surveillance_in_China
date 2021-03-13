@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my page</title>
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <h1>疫情追踪</h1>
+    <button>点我有惊喜</button>
+    <h3>实时报道</h3>
+
+    <script>
+        $("button").click(function () {
+            $.ajax({
+                url:"/ajax",
+                type:"post",
+                data:{"name":"高帅","score":"分数"},
+                success:function (d) {
+                    $("h1").html("武汉加油"+d)
+                },error:function () {
+                    alert("发送失败")
+                }
+            })
+        })
+    </script>
+</body>
+</html>
